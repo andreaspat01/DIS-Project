@@ -6,7 +6,7 @@ from flask_login import LoginManager
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'fc089b9218301ad987914c53481bff04'
 # set your own database name, user name and password
-db = "dbname='postgres' user='postgres' host='localhost' password='bryggervangen16'" #potentially wrong password
+db = "dbname='DIS_project' user='postgres' host='localhost' password='12345678'" #potentially wrong password
 conn = psycopg2.connect(db)
 
 bcrypt = Bcrypt(app)
