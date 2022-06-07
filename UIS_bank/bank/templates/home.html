@@ -8,11 +8,10 @@
               <a class="mr-2" href="#">{{ post.author }}</a>
               <small class="text-muted">{{ post.date_posted }}</small>
             </div>
-            <p>Lorem Ipsum dolor set amet....</p>
-            <figure>
-              <img src="/Users/ap/Dropbox/KU/4. Semester/Databases and Informationssystems/Project/UIS_bank/testfig.jpg" alt="Trulli" style="width:100%">
-              <figcaption>Test statistics</figcaption>
-            </figure>
+            <p>On this Web-App you can compare the Gross Domestic Product of all the countries in the world!</p>
+            <p>By clicking the links in the navbar you can see different kinds og statistics</p>
+            <p>Enjoy!</p>
+            <img src="{{url_for('static', filename='world_image.png')}}" id="world_img"/>
             <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
             <p class="article-content">{{ post.content }}</p>
           </div>
