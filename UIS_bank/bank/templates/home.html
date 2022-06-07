@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>{{ current_user.name }}</h1>
+    {% for post in posts %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ post.author }}</a>
+              <small class="text-muted">{{ post.date_posted }}</small>
+            </div>
+            <p>Lorem Ipsum dolor set amet....</p>
+            <figure>
+              <img src="/Users/ap/Dropbox/KU/4. Semester/Databases and Informationssystems/Project/UIS_bank/testfig.jpg" alt="Trulli" style="width:100%">
+              <figcaption>Test statistics</figcaption>
+            </figure>
+            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
