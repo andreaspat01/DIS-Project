@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Welcome</h1>
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#"></a>
+              <small class="text-muted"></small>
+            </div>
+            <p>On this Web-App you can compare the Gross Domestic Product of all the countries in the world!</p>
+            <p>By clicking the links in the navbar you can see different kinds of statistics.</p>
+            <p>Enjoy!</p>
+            <img src="{{url_for('static', filename='world_image.png')}}" id="world_img"/>
+            <h2><a class="article-title" href="#"></a></h2>
+            <p class="article-content"></p>
+          </div>
+        </article>
+{% endblock content %}

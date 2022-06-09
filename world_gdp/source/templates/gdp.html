@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Economic development</h1> 
+</div>
+    <h4>Here you can examine an economic measure of two countries, compare the two each other </h4>
+    <h4>and see their individually development since 1970. </h4>
+</div>
+    <p>In the selection tab below chose two countries:</p>
+<div class="form-group">
+<form action="/data" method="POST">
+    First Country:    
+    <label for="country_1"></label>
+    <select class="form-control" id="country_1" name="country_1">
+        {% for country in posts.countries %}
+            <option value="{{country}}" SELECTED>{{country}}</option>"
+        {% endfor %}
+    </select>
+    <br>
+
+    Second Country: <br>
+    <label for="country_2"></label>
+    <select class="form-control" id="country_2" name="country_2">
+        {% for country in posts.countries %}
+            <option value="{{country}}" SELECTED>{{country}}</option>"
+        {% endfor %}
+    </select>
+    <br>
+
+    Which graph do you want? <br>
+    <label for="Measure"></label>
+    <select class="form-control" id="Measure" name="Measure">
+        <option value="GDP">Gross Domestic Product</option>
+        <option value="GDP_PER_CAPITA">Gross Domestic Product per capita</option>
+        <option value="GDP_GROWTH">Gross Domestic Product Growth</option>
+        <option value="GDP_PER_CAPITA_GROWTH">Gross Domestic Product pr capita growth</option>
+        <option value="GDP_PPP">Purchasing Power Parity</option>
+        <option value="GDP_PPP_PER_CAPITA">Purchasing Power Parity per Capita</option>
+    </select>
+    <br>
+
+    <button class="btn btn-primary" type = "submit">See Graph</button>
+    <br>
+</form>
+</div>
+{% if posts.hasgraph %}   
+    <img class="rounded mx-auto d-block" src="{{url_for('static',filename='Comparison.png')}}" id="GDP"/>
+{% endif %}
+
+
+
+{% endblock content %}
